@@ -12,7 +12,7 @@ POINTS = [
     ("Echo", 10.050, 20.020),
 ]
 
-m = folium.Map(location=[10.030, 20.025], zoom_start=13)
+m = folium.Map(location=[10.030, 20.025], zoom_start=13, tiles=None)
 for name, lat, lon in POINTS:
     folium.Marker(location=[lat, lon], popup=name).add_to(m)
 folium.TileLayer("OpenStreetMap").add_to(m)

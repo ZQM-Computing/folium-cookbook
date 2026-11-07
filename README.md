@@ -40,6 +40,19 @@ Python developers who publish interactive maps from notebooks and scripts.
 | 02 | [examples/02-choropleth](examples/02-choropleth) | Choropleth-style maps from GeoJSON dicts | Written (design-only) |
 | 03 | [examples/03-vector-layers](examples/03-vector-layers) | GeoJSON and vector overlays with popups | Written (design-only) |
 | 04 | [examples/04-export](examples/04-export) | Exporting standalone HTML maps | Written (design-only) |
+| 05 | [examples/05-coverage-aware-parcels](examples/05-coverage-aware-parcels) | Map synthetic screened parcels without conflating unknown coverage and numeric zero | Automated tests added; CI validation pending |
+
+## Reproducible CI and end-to-end tests
+
+The repository now has a pinned `folium==0.20.0` dependency and a Python 3.11/3.12 GitHub Actions workflow. The unit-test suite executes **all four original scripts** in fresh temporary directories and verifies the HTML that Folium actually renders; it also tests the fifth coverage-aware example's negative cases and exact synthetic JSON report.
+
+```bash
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -p "test_*.py" -v
+python examples/05-coverage-aware-parcels/run.py --output-dir output/coverage
+```
+
+**Evidence scope:** Linux GitHub-hosted test execution is distinct from validation on Node-1/Node-3 hardware and from real browser/offline acceptance. Older notes about the fleet environment remain historical until a separate exact-version fleet test is documented. Leaflet/CDN resources in the output HTML generally require internet access; creating a map HTML is not offline-first PWA support.
 
 ## Repository layout
 
@@ -49,7 +62,11 @@ folium-cookbook/
 │   ├── 01-first-map/
 │   ├── 02-choropleth/
 │   ├── 03-vector-layers/
-│   └── 04-export/
+│   ├── 04-export/
+│   └── 05-coverage-aware-parcels/
+├── tests/test_examples.py
+├── .github/workflows/ci.yml
+├── requirements.txt
 ├── README.md
 └── LICENSE
 ```

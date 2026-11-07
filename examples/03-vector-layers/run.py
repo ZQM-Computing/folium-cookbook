@@ -1,4 +1,4 @@
-# 03-vector-layers (folium) — design-only, gate 1 target.
+# 03-vector-layers (folium) — Linux CI synthetic tests; fleet/browser validation still pending.
 # Fleet invocation (Node-1): C:\geo-tools\wave11-venv\Scripts\python.exe run.py
 # GeoJSON polygons + point markers with popups and tooltips.
 # Synthetic geometries ONLY (a made-up grid, not a real place).

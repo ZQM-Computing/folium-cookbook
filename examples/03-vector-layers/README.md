@@ -34,6 +34,4 @@ contains "Zone A", "Zone B", "Site 1", and "Site 4".
 
 - Tool: folium 0.20.0 in Node-1's wave11-venv (wave-11A, Wally
   spot-checked).
-- Evidence level: design-only (gate 1 target). Polygon/marker counts
-  and popup contents were derived during drafting; running them
-  against the fleet folium environment is **to confirm at validation**.
+- Evidence level: automated Linux CI executes this **actual Python script** with Folium 0.20.0 on Python 3.11/3.12, generates HTML and asserts the documented synthetic output. The check does **not** validate the physical fleet, browser/CDN behavior or real-world data.

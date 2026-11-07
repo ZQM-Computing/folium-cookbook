@@ -44,6 +44,8 @@ class ExistingExamples(unittest.TestCase):
                 html = rendered.read_text(encoding="utf-8")
                 self.assertGreater(len(html), 2000)
                 self.assertIn("leaflet", html.lower())
+                if directory == "01-first-map":
+                    self.assertEqual(html.count("L.tileLayer("), 1, "Avoid duplicate base tiles")
                 for token in tokens:
                     self.assertIn(token, html)
 

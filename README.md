@@ -11,11 +11,11 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A **folium cookbook** — interactive Leaflet maps from Python. Installed in wave-11 (Node-1 wave11-venv, Wally spot-checked 2026-10-25). First pattern pass written below (design-only, gate 1 target). It is intended for Python developers who publish interactive maps from notebooks and scripts. Validate each pattern against your own data, software versions, and operating environment before adopting it.
+A **folium cookbook** — interactive Leaflet maps from Python. Installed in wave-11 (Node-1 wave11-venv, Wally spot-checked 2026-10-25). Five synthetic map examples now have executable GitHub Actions regression tests. No physical fleet or field/browser validation is claimed. It is intended for Python developers who publish interactive maps from notebooks and scripts. Validate each pattern against your own data, software versions, and operating environment before adopting it.
 
 ## Repository role and status
 
-**Status:** Active, public. First pattern pass written (design-only, gate 1 target — none runtime-validated on the fleet yet).
+**Status:** Active, public. CI exercises five synthetic map examples with folium 0.20.0 on Linux and Python 3.11/3.12. None has separately verified fleet or real-world browser performance.
 
 **What this repository is:** folium patterns — see the table below.
 
@@ -36,11 +36,11 @@ Python developers who publish interactive maps from notebooks and scripts.
 
 | # | Example | What it demonstrates | Status |
 |---|---------|----------------------|--------|
-| 01 | [examples/01-first-map](examples/01-first-map) | A first map: markers, tiles, and layers | Written (design-only) |
-| 02 | [examples/02-choropleth](examples/02-choropleth) | Choropleth-style maps from GeoJSON dicts | Written (design-only) |
-| 03 | [examples/03-vector-layers](examples/03-vector-layers) | GeoJSON and vector overlays with popups | Written (design-only) |
-| 04 | [examples/04-export](examples/04-export) | Exporting standalone HTML maps | Written (design-only) |
-| 05 | [examples/05-coverage-aware-parcels](examples/05-coverage-aware-parcels) | Map synthetic screened parcels without conflating unknown coverage and numeric zero | Automated tests added; CI validation pending |
+| 01 | [examples/01-first-map](examples/01-first-map) | A first map: markers, tiles, and layers | Linux CI synthetic regression |
+| 02 | [examples/02-choropleth](examples/02-choropleth) | Choropleth-style maps from GeoJSON dicts | Linux CI synthetic regression |
+| 03 | [examples/03-vector-layers](examples/03-vector-layers) | GeoJSON and vector overlays with popups | Linux CI synthetic regression |
+| 04 | [examples/04-export](examples/04-export) | Exporting standalone HTML maps | Linux CI synthetic regression |
+| 05 | [examples/05-coverage-aware-parcels](examples/05-coverage-aware-parcels) | Map synthetic screened parcels without conflating unknown coverage and numeric zero | Linux CI synthetic regression |
 
 ## Reproducible CI and end-to-end tests
 
@@ -73,8 +73,9 @@ folium-cookbook/
 
 ## Roadmap
 
-- First pattern pass: all four table rows (design-only, gate 1 target)
-- Validation pass: run each pattern against the fleet environment and promote to gate 3
+- CI: execute all five patterns on Python 3.11 and 3.12 and review exact-commit evidence
+- Fleet/device gate: separately test the intended venv, actual browsers, online tiles and inaccessible network/CDN fallbacks
+- Production data gate: review licensing, CRS, source-coverage footprints, privacy and environmental interpretation before real-site use
 
 ## Contributing
 

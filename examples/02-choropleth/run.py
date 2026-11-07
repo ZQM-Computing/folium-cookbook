@@ -1,4 +1,4 @@
-# 02-choropleth (folium) — design-only, gate 1 target.
+# 02-choropleth (folium) — Linux CI synthetic tests; fleet/browser validation still pending.
 # Fleet invocation (Node-1): C:\geo-tools\wave11-venv\Scripts\python.exe run.py
 # Choropleth-STYLE map from a plain GeoJSON dict + style function.
 # No GeoPandas required: the seed's GeoDataFrame variant is a validation

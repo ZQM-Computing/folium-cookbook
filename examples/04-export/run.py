@@ -1,4 +1,4 @@
-# 04-export (folium) — design-only, gate 1 target.
+# 04-export (folium) — Linux CI synthetic tests; fleet/browser validation still pending.
 # Fleet invocation (Node-1): C:\geo-tools\wave11-venv\Scripts\python.exe run.py
 # Exporting a standalone HTML map: one file, no server required to open
 # it. Tiles still load from the CDN at view time (see README).

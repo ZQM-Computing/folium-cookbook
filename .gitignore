@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+first_map.html
+choropleth.html
+vector_layers.html
+standalone_map.html
+parcel_screening.html
+parcel_screening.metrics.json
+output/

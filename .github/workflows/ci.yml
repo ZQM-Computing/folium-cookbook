@@ -12,7 +12,7 @@ permissions:
 jobs:
   examples:
     name: Python ${{ matrix.python-version }} synthetic maps
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64, zqm-linux]
     timeout-minutes: 10
     strategy:
       fail-fast: false
